@@ -1,0 +1,53 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:TreeViewSample.ViewModels"
+        xmlns:views="clr-namespace:TreeViewSample.Views"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="TreeViewSample.Views.MainWindow"
+        Title="MainWindow">
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Panel MaxHeight="900" MaxWidth="1500">
+        <ExperimentalAcrylicBorder>
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial BackgroundSource="Digger" TintColor="#424242" TintOpacity="1" MaterialOpacity="0.6"/>
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+        <DockPanel Margin="24">
+            <Grid DockPanel.Dock="Top" HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+
+                <Panel Grid.Column="0">
+                    <TextBlock Classes="title" Margin="40 20" FontSize="20" HorizontalAlignment="Left"
+                               VerticalAlignment="Top">
+                       SAMPLE APP 
+                    </TextBlock>
+                </Panel>
+                <Button Grid.Column="2" VerticalAlignment="Top" Name="AuthenticateButton" Margin="4,0,0,0">
+                    Login
+                </Button>
+                <TextBlock Grid.Column="3" VerticalAlignment="Top" Classes="normal" HorizontalAlignment="Right"
+                           Name="AuthenticatedTextBox" Margin="4,4,10,0">
+                    ...
+                </TextBlock>
+            </Grid>
+            <StackPanel  DockPanel.Dock="Bottom" >
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Height="50" HorizontalAlignment="Stretch">
+                    <TextBox IsReadOnly="true" Name="LogTextBox" Text="LOG AREA" BorderThickness="0" />
+                </ScrollViewer>
+            </StackPanel>
+            
+            <views:NavigationView />
+            
+                
+        </DockPanel>
+    </Panel>
+</Window>

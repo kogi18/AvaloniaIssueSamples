@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <StartupObject>TreeViewSample.Program</StartupObject>
+        <AssemblyName>Sample</AssemblyName>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>TreeView</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Avalonia" Version="0.10.6" />
+      <PackageReference Include="Avalonia.Desktop" Version="0.10.6" />
+      <PackageReference Include="Avalonia.Diagnostics" Version="0.10.6" />
+      <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.6" />
+      <PackageReference Include="MessageBox.Avalonia" Version="1.5.1" />
+    </ItemGroup>
+
+
+</Project>
