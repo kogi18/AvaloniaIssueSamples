@@ -18,17 +18,17 @@ namespace TreeViewSample.ViewModels
         {
             
             AddChild = ReactiveCommand.Create(() => {
-                selected_subhierarchy_.Children.Add(new HierarchyNodeViewModel(string.Format($"Manual {selected_subhierarchy_.Count}")));
+                selected_subhierarchy_.Children.Add(new HierarchyNodeViewModel(string.Format($"Manual {selected_subhierarchy_.Count}"), this));
             });
             
             
             var gen = new Random();
             for (var i = 0; i < 5; i++)
             {
-                var current = new HierarchyNodeViewModel(string.Format($"Option {i}"));
+                var current = new HierarchyNodeViewModel(string.Format($"Option {i}"), this);
                 for (var j = 0; j < gen.Next(1, 10); j++)
                 {
-                    current.Children.Add(new HierarchyNodeViewModel(string.Format($"Child {j}")));
+                    current.Children.Add(new HierarchyNodeViewModel(string.Format($"Child {j}"), this));
                 }
                 TreeHierarchy.Add(current);
             }

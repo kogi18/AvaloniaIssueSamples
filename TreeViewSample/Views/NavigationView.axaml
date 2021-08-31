@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:TreeViewSample.ViewModels"
              x:Class="TreeViewSample.Views.NavigationView"
+			
+			 x:DataType="vm:NavigationViewModel"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450">
     <UserControl.DataContext>
         <vm:NavigationViewModel />
@@ -20,7 +22,7 @@
                 <Style Selector="TreeViewItem">
                     <Setter Property="ContextMenu">
                         <ContextMenu>
-                            <MenuItem Header="Add child node" Command="{Binding  AddChild}" />
+                            <MenuItem Header="Add child node" Command="{Binding Parent.AddChild}" />
                             <MenuItem Header="CLICK ME" />
                         </ContextMenu>
                     </Setter>
