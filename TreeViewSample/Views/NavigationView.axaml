@@ -20,7 +20,7 @@
                 <Style Selector="TreeViewItem">
                     <Setter Property="ContextMenu">
                         <ContextMenu>
-                            <MenuItem Header="Deselect" Command="{Binding  AddChild}" />
+                            <MenuItem Header="Add child node" Command="{Binding  AddChild}" />
                             <MenuItem Header="CLICK ME" />
                         </ContextMenu>
                     </Setter>
